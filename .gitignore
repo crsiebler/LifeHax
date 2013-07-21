@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /web/bundles/
 /app/bootstrap.php.cache
 /app/cache/*
@@ -7,3 +8,18 @@
 /vendor/
 /bin/
 /composer.phar
+=======
+# Bootstrap
+app/bootstrap*
+
+# Symfony directories
+vendor/*
+*/logs/*
+*/cache/*
+web/uploads/*
+web/bundles/*
+
+# Configuration files
+app/config/parameters.ini
+app/config/parameters.yml
+>>>>>>> 8bff6b9d626742d3ed1d868bb27333a5aecaa3b3
