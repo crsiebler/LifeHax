@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+
+{% block head_style %}
+{{ parent() }}
+<style></style>
+{% endblock head_style %}
+
+{% block headline %}
+    {% if "login" in app.request.attributes.get('_route') %}
+    Login
+    {% elseif "register" in app.request.attributes.get('_route') %}
+    User Registration
+    {% elseif "confirmed" in app.request.attributes.get('_route') %}
+    Success!
+    {% else %}
+    FOSUser Template (Need to Change!!)
+    {% endif %}
+{% endblock headline %}
+
+{% block content_row %}
+    {% block fos_user_content %}{% endblock fos_user_content %}
+{% endblock content_row %}
