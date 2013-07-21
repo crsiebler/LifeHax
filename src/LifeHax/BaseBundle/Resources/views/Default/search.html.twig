@@ -1,0 +1,11 @@
+{% extends '::base.html.twig' %}
+
+{% block headline %}Search Results{% endblock headline %}
+
+{% block content_content %}
+    {% for result in results %}
+        <a href="{{ path('user_show', { 'id': result.getId() }) }}">{{ result.getName }}</a><br>
+    {% endfor %}
+{% endblock content_content %}
+
+{% block content_sidebar %}{% endblock content_sidebar %}

@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Craue\FormFlowBundle\CraueFormFlowBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new LifeHax\BaseBundle\LifeHaxBaseBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

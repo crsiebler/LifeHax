@@ -1,0 +1,5 @@
+life_hax_base:
+    resource: "@LifeHaxBaseBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
