@@ -23,3 +23,4 @@ web/bundles/*
 app/config/parameters.ini
 app/config/parameters.yml
 >>>>>>> 8bff6b9d626742d3ed1d868bb27333a5aecaa3b3
+/nbproject/private/
