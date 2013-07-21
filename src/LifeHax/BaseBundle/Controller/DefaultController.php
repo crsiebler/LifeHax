@@ -1,6 +1,6 @@
 <?php
 
-namespace Sonata\WebsiteBundle\Controller;
+namespace LifeHax\BaseBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -26,9 +26,7 @@ class DefaultController extends Controller {
     public function searchAction() {
         $securityContext = $this->container->get('security.context');
         if ($securityContext->isGranted('IS_AUTHENTICATED_REMEMBERED') || $securityContext->isGranted('IS_AUTHENTICATED_FULLY')) {
-            // authenticated REMEMBERED, FULLY will imply REMEMBERED (NON anonymous)
-            // Use deep search because parameter is in a multidimensional array
-            $searchTerm = $this->getRequest()->get('lifehax_websitebundle_searchtype[searchTerm]', null, true);
+//            $searchTerm = $this->getRequest()->get('lifehax_basebundle_searchtype[searchTerm]', null, true);
 
             $em = $this->getDoctrine()->getManager();
             

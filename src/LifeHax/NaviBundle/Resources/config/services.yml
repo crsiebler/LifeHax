@@ -1,0 +1,36 @@
+parameters:
+  lifehax_navi.navbar.class: LifeHax\NaviBundle\NavBar\MenuBuilder
+
+services:
+  lifehax_navi.navbar:
+      class: '%mopa_bootstrap.navbar.generic%'
+      scope: request
+      arguments:
+          - { leftmenu: '@lifehax_navi.navbar_main_menu=', rightmenu: '@lifehax_navi.navbar_right_menu=' }
+          - { searchform: LifeHax\BaseBundle\Form\SearchType }
+          - { title: "LifeHax", titleRoute: "homepage", fixedTop: true, isFluid: false, inverse: true }
+      tags:
+          - { name: mopa_bootstrap.navbar, alias: frontendNavbar }
+
+  lifehax_navi.navbar_menu_builder:
+      class: '%lifehax_navi.navbar.class%'
+      scope: request
+      arguments: [ '@knp_menu.factory', '@security.context', '@session' ]
+
+  lifehax_navi.navbar_main_menu:
+      class: Knp\Menu\MenuItem
+      factory_service: lifehax_navi.navbar_menu_builder
+      factory_method: createMainMenu
+      arguments: [ '@request' ]
+      scope: request
+      tags:
+          - { name: knp_menu.menu, alias: main }
+
+  lifehax_navi.navbar_right_menu:
+      class: Knp\Menu\MenuItem
+      factory_service: lifehax_navi.navbar_menu_builder
+      factory_method: createRightSideDropdownMenu
+      arguments: [ '@request' ]
+      scope: request
+      tags:
+          - { name: knp_menu.menu, alias: main }

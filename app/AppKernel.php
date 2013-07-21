@@ -22,6 +22,8 @@ class AppKernel extends Kernel
             new Craue\FormFlowBundle\CraueFormFlowBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new LifeHax\BaseBundle\LifeHaxBaseBundle(),
+            new LifeHax\NaviBundle\LifeHaxNaviBundle(),
+            new LifeHax\UserBundle\LifeHaxUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

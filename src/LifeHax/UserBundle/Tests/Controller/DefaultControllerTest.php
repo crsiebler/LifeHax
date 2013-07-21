@@ -1,6 +1,6 @@
 <?php
 
-namespace LifeHax\BaseBundle\Tests\Controller;
+namespace LifeHax\UserBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
