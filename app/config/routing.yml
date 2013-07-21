@@ -1,3 +1,8 @@
+life_hax_hax:
+    resource: "@LifeHaxHaxBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 life_hax_user:
     resource: "@LifeHaxUserBundle/Controller/"
     type:     annotation

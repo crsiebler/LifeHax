@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new LifeHax\BaseBundle\LifeHaxBaseBundle(),
             new LifeHax\NaviBundle\LifeHaxNaviBundle(),
             new LifeHax\UserBundle\LifeHaxUserBundle(),
+            new LifeHax\HaxBundle\LifeHaxHaxBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
