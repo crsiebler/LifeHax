@@ -28,7 +28,11 @@ class Genre
      */
     private $name;
 
-
+    /**
+     * @ORM\OneToOne(targetEntity="LifeHax\HaxBundle\Entity\LifeHax", inversedBy="genre")
+     */
+    private $lifeHax;
+    
     /**
      * Get id
      *
@@ -61,4 +65,13 @@ class Genre
     {
         return $this->name;
     }
+
+    public function getLifeHax() {
+        return $this->lifeHax;
+    }
+
+    public function setLifeHax($lifeHax) {
+        $this->lifeHax = $lifeHax;
+    }
+
 }

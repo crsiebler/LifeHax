@@ -44,7 +44,17 @@ class User extends BaseUser {
      * @var DateTime $createdOn
      */
     protected $createdOn;
-
+    
+    /**
+     * @ORM\OneToMany(targetEntity="LifeHax\HaxBundle\Entity\LifeHax", mappedBy="user")
+     */
+    private $lifeHax;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="LifeHax\UserBundle\Entity\Resume", mappedBy="user")
+     */
+    private $resume;
+    
     /**
      *
      * @param type $role
@@ -105,6 +115,7 @@ class User extends BaseUser {
         parent::__construct();
         $this->createdOn = new \DateTime('now');
         $this->userRoles = new ArrayCollection();
+        $this->lifeHax = new ArrayCollection();
     }
 
     public function getUserRoles() {
@@ -132,6 +143,14 @@ class User extends BaseUser {
     public function setLastName($lastName) {
         $this->lastName = $lastName;
         return $this;
+    }
+       
+    public function getLifeHax() {
+        return $this->lifeHax;
+    }
+
+    public function setLifeHax($lifeHax) {
+        $this->lifeHax = $lifeHax;
     }
 
     public function setEmail($email) {

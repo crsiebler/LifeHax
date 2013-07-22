@@ -28,7 +28,21 @@ class Step
      */
     private $msg;
 
-
+    /**
+     * @ORM\ManyToOne(targetEntity="LifeHax\HaxBundle\Entity\HaxStep", inversedBy="steps")
+     */
+    private $hax;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="LifeHax\BaseBundle\Entity\Image")
+     */
+    private $image;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="LifeHax\BaseBundle\Entity\Video")
+     */
+    private $video;
+    
     /**
      * Get id
      *
@@ -61,4 +75,29 @@ class Step
     {
         return $this->msg;
     }
+
+    public function getHax() {
+        return $this->hax;
+    }
+
+    public function setHax($hax) {
+        $this->hax = $hax;
+    }
+
+    public function getImage() {
+        return $this->image;
+    }
+
+    public function setImage($image) {
+        $this->image = $image;
+    }
+
+    public function getVideo() {
+        return $this->video;
+    }
+
+    public function setVideo($video) {
+        $this->video = $video;
+    }
+
 }

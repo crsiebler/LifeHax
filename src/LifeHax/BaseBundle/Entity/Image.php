@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Image
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="LifeHax\BaseBundle\Entity\ImageRepository")
+ * @ORM\Entity(repositoryClass="LifeHax\BaseBundle\Repository\ImageRepository")
  */
 class Image
 {

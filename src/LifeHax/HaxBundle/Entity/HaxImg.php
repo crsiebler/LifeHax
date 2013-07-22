@@ -21,6 +21,15 @@ class HaxImg
      */
     private $id;
 
+    /**
+     * @ORM\OneToOne(targetEntity="LifeHax\HaxBundle\Entity\LifeHax")
+     */
+    private $lifeHax;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="LifeHax\BaseBundle\Entity\Image")
+     */
+    private $image;
 
     /**
      * Get id
@@ -31,4 +40,21 @@ class HaxImg
     {
         return $this->id;
     }
+
+    public function getLifeHax() {
+        return $this->lifeHax;
+    }
+
+    public function setLifeHax($lifeHax) {
+        $this->lifeHax = $lifeHax;
+    }
+
+    public function getImage() {
+        return $this->image;
+    }
+
+    public function setImage($image) {
+        $this->image = $image;
+    }
+
 }

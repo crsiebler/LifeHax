@@ -28,6 +28,10 @@ class HaxSec
      */
     private $description;
 
+    /**
+     * @ORM\OneToOne(targetEntity="LifeHax\HaxBundle\Entity\LifeHax", inversedBy="section")
+     */
+    private $lifeHax;
 
     /**
      * Get id
@@ -61,4 +65,13 @@ class HaxSec
     {
         return $this->description;
     }
+
+    public function getLifeHax() {
+        return $this->lifeHax;
+    }
+
+    public function setLifeHax($lifeHax) {
+        $this->lifeHax = $lifeHax;
+    }
+
 }

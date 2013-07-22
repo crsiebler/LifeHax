@@ -28,6 +28,10 @@ class Comment
      */
     private $msg;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="LifeHax\HaxBundle\Entity\LifeHax", inversedBy="comments")
+     */
+    private $lifeHax;
 
     /**
      * Get id
@@ -61,4 +65,13 @@ class Comment
     {
         return $this->msg;
     }
+
+    public function getLifeHax() {
+        return $this->lifeHax;
+    }
+
+    public function setLifeHax($lifeHax) {
+        $this->lifeHax = $lifeHax;
+    }
+
 }

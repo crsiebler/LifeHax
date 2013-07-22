@@ -3,6 +3,7 @@
 namespace LifeHax\HaxBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * HaxStep
@@ -21,6 +22,19 @@ class HaxStep
      */
     private $id;
 
+    /**
+     * @ORM\OneToOne(targetEntity="LifeHax\HaxBundle\Entity\LifeHax")
+     */
+    private $lifeHax;
+
+    /**
+     * @ORM\OneToMany(targetEntity="LifeHax\HaxBundle\Entity\Step", mappedBy="hax")
+     */
+    private $steps;
+    
+    function __construct() {
+        $this->steps = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -31,4 +45,21 @@ class HaxStep
     {
         return $this->id;
     }
+
+    public function getLifeHax() {
+        return $this->lifeHax;
+    }
+
+    public function setLifeHax($lifeHax) {
+        $this->lifeHax = $lifeHax;
+    }
+
+    public function getSteps() {
+        return $this->steps;
+    }
+
+    public function setSteps($steps) {
+        $this->steps = $steps;
+    }
+
 }

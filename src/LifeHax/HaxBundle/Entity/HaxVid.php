@@ -20,7 +20,16 @@ class HaxVid
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
+    /**
+     * @ORM\OneToOne(targetEntity="LifeHax\HaxBundle\Entity\LifeHax")
+     */
+    private $lifeHax;
+    
+    /**
+     * @ORM\OneToOne(targetEntity="LifeHax\BaseBundle\Entity\Video")
+     */
+    private $video;
 
     /**
      * Get id
@@ -31,4 +40,21 @@ class HaxVid
     {
         return $this->id;
     }
+
+    public function getLifeHax() {
+        return $this->lifeHax;
+    }
+
+    public function setLifeHax($lifeHax) {
+        $this->lifeHax = $lifeHax;
+    }
+
+    public function getVideo() {
+        return $this->video;
+    }
+
+    public function setVideo($video) {
+        $this->video = $video;
+    }
+
 }

@@ -28,6 +28,10 @@ class HaxTxt
      */
     private $msg;
 
+    /**
+     * @ORM\OneToOne(targetEntity="LifeHax\HaxBundle\Entity\LifeHax")
+     */
+    private $lifeHax;
 
     /**
      * Get id
@@ -61,4 +65,13 @@ class HaxTxt
     {
         return $this->msg;
     }
+
+    public function getLifeHax() {
+        return $this->lifeHax;
+    }
+
+    public function setLifeHax($lifeHax) {
+        $this->lifeHax = $lifeHax;
+    }
+
 }

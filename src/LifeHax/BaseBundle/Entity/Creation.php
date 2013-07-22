@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Creation
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="LifeHax\BaseBundle\Entity\CreationRepository")
+ * @ORM\Entity(repositoryClass="LifeHax\BaseBundle\Repository\CreationRepository")
  */
 class Creation
 {
@@ -31,9 +31,9 @@ class Creation
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created", type="datetime")
+     * @ORM\Column(name="birth", type="datetime")
      */
-    private $created;
+    private $birth;
 
 
     /**
@@ -70,25 +70,24 @@ class Creation
     }
 
     /**
-     * Set created
+     * Set birth
      *
-     * @param \DateTime $created
-     * @return Creation
+     * @param \DateTime $birth
+     * @return Birth
      */
-    public function setCreated($created)
+    public function setBirth($birth)
     {
-        $this->created = $created;
-    
+        $this->birth = $birth;
         return $this;
     }
 
     /**
-     * Get created
+     * Get birth
      *
      * @return \DateTime 
      */
-    public function getCreated()
+    public function getBirth()
     {
-        return $this->created;
+        return $this->birth;
     }
 }

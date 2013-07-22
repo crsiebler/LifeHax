@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Video
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="LifeHax\BaseBundle\Entity\VideoRepository")
+ * @ORM\Entity(repositoryClass="LifeHax\BaseBundle\Repository\VideoRepository")
  */
 class Video
 {
